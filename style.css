@@ -1,0 +1,12 @@
+#sentence:hover {
+  font-size: 14px;
+  animation-play-state: paused;
+}
+@media only screen and (max-width: 600px) {
+  /* Estilos específicos para dispositivos móviles con ancho máximo de 600px */
+  body {
+    /* Ajusta los estilos del body para dispositivos móviles */
+  }
+
+  /* Ajusta los estilos de los elementos específicos para dispositivos móviles */
+}

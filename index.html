@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Roberto Valdivia</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movimiento en zigzag y cambio de texto al pasar el mouse</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 200px;
+      background-color: #000;
+      color: #fff;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #sentence {
+      position: relative;
+      animation-name: moveZigzag;
+      animation-duration: 10s; /* Aumentamos la duración de la animación */
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      font-size: 48px;
+    }
+
+    #sentence:hover {
+      font-size: 24px;
+    }
+
+    @keyframes moveZigzag {
+      0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: calc(100% - 300px);
+      }
+      50% {
+        top: calc(50% - 100px);
+        left: calc(100% - 200px);
+      }
+      75% {
+        top: calc(50% - 100px);
+        left: 0;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="sentence">Odio el trabajo</h1>
+
+  <script>
+    // Array de textos para cambiar al pasar el mouse
+    var texts = ["Pero sonrío cuando me mandas un nude", "Pero cuando pienso te amo y soy feliz];
+
+    // Función para cambiar el texto al pasar el mouse
+    function changeText() {
+      var randomIndex = Math.floor(Math.random() * texts.length);
+      document.getElementById("sentence").textContent = texts[randomIndex];
+    }
+
+    // Asignar evento para cambiar el texto al pasar el mouse
+    document.getElementById("sentence").addEventListener("mouseover", changeText);
+
+    // Array de colores para el fondo
+    var colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#00ffff", "#ff00ff"];
+
+    // Función para cambiar el color del fondo cada 2 segundos
+    function changeColor() {
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+
+    // Ejecutar la función cada 2 segundos
+    setInterval(changeColor, 2000);
+  </script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
